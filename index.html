@@ -107,8 +107,14 @@
   <div class="hero">
     <h1>Welcome to Business With Us</h1>
     <p>Building Digital Empires</p>
-    <<button onclick="window.location.href='login.html'">Get Started</button>
+    <button onclick="window.location.href='login.html'">Get Started</button>
   </div>
+<script>
+  var user = localStorage.getItem("username");
 
+  if(user){
+    window.location.href = "dashboard.html";
+  }
+</script>
 </body>
 </html>
