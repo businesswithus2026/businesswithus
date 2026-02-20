@@ -63,7 +63,14 @@
     <h2>Login</h2>
     <input type="text" placeholder="Username">
     <input type="password" placeholder="Password">
-    <button>Login</button>
+    <button onclick="login()">Login</button>
+
+<script>
+function login() {
+  alert("Login Successful!");
+  window.location.href = "dashboard.html";
+}
+</script>
     <a href="index.html">Back to Home</a>
   </div>
 
