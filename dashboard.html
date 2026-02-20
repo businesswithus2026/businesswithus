@@ -143,7 +143,14 @@
         <p>Support</p>
       </div>
     </div>
+   <div style="margin-top:40px;">
+  <button onclick="showEdit()">Edit Name</button>
 
+  <div id="editSection" style="margin-top:15px; display:none;">
+    <input type="text" id="newName" placeholder="Enter new name" style="padding:8px; border-radius:8px; border:none;">
+    <button onclick="saveName()">Save</button>
+  </div>
+   </div>
     <button onclick="logout()">Logout</button>
   </div>
 
@@ -160,6 +167,25 @@ if(user) {
 function logout() {
   localStorage.removeItem("username");
   window.location.href = "index.html";
+}
+  function showEdit() {
+  document.getElementById("editSection").style.display = "block";
+}
+
+function saveName() {
+  var newName = document.getElementById("newName").value;
+
+  if(newName === "") {
+    alert("Enter a valid name");
+    return;
+  }
+
+  localStorage.setItem("username", newName);
+
+  document.getElementById("welcome").innerText = "Welcome, " + newName + " 🚀";
+  document.getElementById("profileLetter").innerText = newName.charAt(0).toUpperCase();
+
+  document.getElementById("editSection").style.display = "none";
 }
 </script>
 
