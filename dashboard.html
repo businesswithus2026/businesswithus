@@ -156,6 +156,10 @@
 
 <script>
 var user = localStorage.getItem("username");
+
+if(!user) {
+  window.location.href = "login.html";
+}
 var firstLetter = user.charAt(0).toUpperCase();
 document.getElementById("profileLetter").innerText = firstLetter;
 if(user) {
