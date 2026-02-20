@@ -4,31 +4,44 @@
   <title>Business With Us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
       color: white;
       overflow-x: hidden;
     }
 
-    /* Fixed Logo */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .logo {
       position: fixed;
       top: 20px;
       left: 20px;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
-      z-index: 1000;
+      text-shadow: 0 0 15px #00f7ff;
+      animation: zoomIn 1.5s ease forwards;
     }
 
-    /* Instagram Icon */
     .insta {
       position: fixed;
       top: 20px;
-      left: 200px;
-      font-size: 24px;
+      right: 20px;
+      font-size: 26px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .insta:hover {
+      transform: scale(1.2);
     }
 
     .hero {
@@ -41,37 +54,45 @@
     }
 
     h1 {
-      font-size: 40px;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 42px;
+      animation: fadeUp 1.5s ease forwards;
     }
 
     p {
       font-size: 18px;
       opacity: 0.8;
       margin-top: 10px;
+      animation: fadeUp 2s ease forwards;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 30px;
+      margin-top: 30px;
+      padding: 14px 40px;
       border: none;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
       color: white;
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
       transition: 0.3s;
     }
 
     button:hover {
-      background: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.35);
+      transform: scale(1.05);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
   </style>
 </head>
 
@@ -85,8 +106,8 @@
 
   <div class="hero">
     <h1>Welcome to Business With Us</h1>
-    <p>Where Ideas Become Reality</p>
-    <button>Login</button>
+    <p>Building Digital Empires</p>
+    <button>Get Started</button>
   </div>
 
 </body>
